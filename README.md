@@ -4,3 +4,4 @@ This agent is a self sufficient agent that can run and execute the commands give
 The agent is fully working, and the server is implemented in Typescript. The agent is very capable. 
 
 Here are some screenshots of the working agent:- 
+<img width="1470" height="956" alt="Screenshot 2026-05-03 at 2 14 39 AM" src="https://github.com/user-attachments/assets/693508ec-30b7-454b-a710-ee8f67628a2d" />
