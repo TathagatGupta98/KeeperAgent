@@ -1,0 +1,47 @@
+{
+  "name": "@keeperhub/plugin-keeperkit",
+  "version": "0.1.0",
+  "description": "ElizaOS plugin for KeeperHub blockchain automation — wraps the keeperkit SDK for AI agents",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "keeperkit": "workspace:*"
+  },
+  "peerDependencies": {
+    "@elizaos/core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@elizaos/core": "^1.0.0",
+    "typescript": "^5.7.0",
+    "tsup": "^8.4.0",
+    "vitest": "^3.1.0",
+    "@types/node": "^22.0.0"
+  },
+  "keywords": [
+    "keeperhub", "keeperkit", "elizaos", "eliza", "ai-agent",
+    "web3", "blockchain", "automation", "plugin", "x402"
+  ],
+  "homepage": "https://github.com/PhAnToMxSD/KeeperKit/tree/main/plugin-elizaos",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhAnToMxSD/KeeperKit.git",
+    "directory": "plugin-elizaos"
+  }
+}

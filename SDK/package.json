@@ -1,0 +1,55 @@
+{
+  "name": "keeperkit",
+  "version": "0.1.2",
+  "description": "Official TypeScript SDK for the KeeperHub blockchain automation protocol",
+  "type": "module",
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup --watch",
+    "type-check": "tsc --noEmit",
+    "fix": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "keeperhub",
+    "keeperkit",
+    "web3",
+    "blockchain",
+    "automation",
+    "workflows",
+    "defi"
+  ],
+  "homepage": "https://docs.keeperhub.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KeeperHub/keeperhub"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.1.0",
+    "@types/node": "^22.0.0"
+  }
+}
