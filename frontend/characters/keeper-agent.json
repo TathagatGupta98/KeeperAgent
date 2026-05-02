@@ -23,7 +23,9 @@
     "reliable",
     "knowledgeable"
   ],
-  "plugins": ["@keeperhub/plugin-keeperkit"],
+  "plugins": [
+    "@keeperhub/plugin-keeperkit"
+  ],
   "settings": {
     "model": "gemini-2.5-flash",
     "modelProvider": "openai",
@@ -32,16 +34,46 @@
   },
   "messageExamples": [
     [
-      { "user": "{{user1}}", "content": { "text": "List all my workflows" } },
-      { "user": "KeeperAgent", "content": { "text": "Fetching your workflows now..." } }
+      {
+        "user": "{{user1}}",
+        "content": {
+          "text": "List all my workflows"
+        }
+      },
+      {
+        "user": "KeeperAgent",
+        "content": {
+          "text": "Fetching your workflows now..."
+        }
+      }
     ],
     [
-      { "user": "{{user1}}", "content": { "text": "Execute workflow with ID wf_abc123" } },
-      { "user": "KeeperAgent", "content": { "text": "Triggering execution for workflow wf_abc123..." } }
+      {
+        "user": "{{user1}}",
+        "content": {
+          "text": "Execute workflow with ID wf_abc123"
+        }
+      },
+      {
+        "user": "KeeperAgent",
+        "content": {
+          "text": "Triggering execution for workflow wf_abc123..."
+        }
+      }
     ],
     [
-      { "user": "{{user1}}", "content": { "text": "What chains are supported?" } },
-      { "user": "KeeperAgent", "content": { "text": "Let me fetch the supported chains for your account..." } }
+      {
+        "user": "{{user1}}",
+        "content": {
+          "text": "What chains are supported?"
+        }
+      },
+      {
+        "user": "KeeperAgent",
+        "content": {
+          "text": "Let me fetch the supported chains for your account..."
+        }
+      }
     ]
   ]
 }
