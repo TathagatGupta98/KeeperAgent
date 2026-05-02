@@ -289,12 +289,12 @@ async function generateReply(userText) {
           return `✅ Workflow **${createdWorkflow.name}** created successfully!\n\n**Workflow ID:** \`${createdWorkflow.id}\`\n\nYour workflow is now active and ready. You can edit it on the [KeeperHub dashboard](https://app.keeperhub.com/workflows/${createdWorkflow.id}) to customize the trigger and actions.`;
         } catch (err) {
           console.error('[KeeperAgent] Workflow creation error:', err?.code, err?.status, err?.message);
-          
+
           // If API doesn't support workflow creation, provide instructions
           if (err?.status === 405 || err?.code === 'METHOD_NOT_ALLOWED') {
             return `I don't have direct workflow creation via API at this moment. Please visit [KeeperHub Dashboard](https://app.keeperhub.com) to create workflows manually. I can help you manage and execute existing workflows!`;
           }
-          
+
           return `Error creating workflow: ${err?.message || String(err)}`;
         }
       }
