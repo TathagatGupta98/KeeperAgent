@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Keeper University - Administrative Dashboard</title>
+  <meta name="description" content="Dummy administrative dashboard for Keeper University, showing hard-coded metrics for student fee collection, university distribution, and campus workflow health." />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body class="dashboard-page">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-mark brand-mark-dark">KU</div>
+        <div>
+          <div class="sidebar-title">Keeper University</div>
+          <div class="sidebar-subtitle">Administrative Portal</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Dashboard navigation">
+        <a class="sidebar-link active" href="dashboard.html"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+        <a class="sidebar-link" href="chat.html"><span class="material-symbols-outlined">account_tree</span><span>Workflow Builder</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a class="sidebar-link" href="#"><span class="material-symbols-outlined">description</span><span>Documentation</span></a>
+        <a class="sidebar-link" href="#"><span class="material-symbols-outlined">help</span><span>Support</span></a>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-brand">KeeperHub Management</div>
+        <div class="topbar-search">
+          <span class="material-symbols-outlined">search</span>
+          <input type="search" placeholder="Search transactions, students..." aria-label="Search transactions or students" />
+        </div>
+        <nav class="topbar-links" aria-label="Primary">
+          <a href="#">Payments</a>
+          <a href="#">Wallets</a>
+          <a href="#">SDK Logs</a>
+        </nav>
+        <div class="topbar-actions">
+          <button class="icon-button" type="button" aria-label="Notifications"><span class="material-symbols-outlined">notifications</span></button>
+          <button class="icon-button" type="button" aria-label="Sync"><span class="material-symbols-outlined">sync_alt</span></button>
+          <div class="avatar">AM</div>
+        </div>
+      </header>
+
+      <main class="dashboard-main">
+        <section class="page-header">
+          <div>
+            <div class="eyebrow">Administrative Overview</div>
+            <h1 class="page-title">Real-time campus metrics with hard-coded demo values.</h1>
+            <p class="page-copy">The dashboard is a static preview of what operators would see inside KeeperHub: fee collections, active workflow throughput, and the health of payment channels for hostels, lecture halls, mess management, and scholarships.</p>
+          </div>
+          <div class="page-actions">
+            <a class="btn btn-secondary" href="chat.html">Open workflow builder</a>
+            <button class="btn btn-primary" type="button">Export report</button>
+          </div>
+        </section>
+
+        <section class="metric-grid">
+          <article class="metric-card">
+            <div class="metric-label">
+              <span>Total Fees Collected (DeFi)</span>
+              <span class="material-symbols-outlined" style="color: var(--primary);">payments</span>
+            </div>
+            <p class="metric-value">$4.2M</p>
+            <div class="metric-trend"><span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span> +12.5% <span class="metric-subtitle">vs last semester</span></div>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-label">
+              <span>Active Workflows</span>
+              <span class="material-symbols-outlined" style="color: var(--muted);">schema</span>
+            </div>
+            <p class="metric-value">142</p>
+            <div class="metric-trend"><span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span> 99.9% uptime <span class="metric-subtitle">across all hubs</span></div>
+          </article>
+
+          <article class="metric-card">
+            <div class="metric-label">
+              <span>Student Adoption Rate</span>
+              <span class="material-symbols-outlined" style="color: var(--muted);">groups</span>
+            </div>
+            <p class="metric-value">68%</p>
+            <div class="progress"><span style="width: 68%;"></span></div>
+            <div class="metric-subtitle" style="margin-top: 10px; text-align: right;">Students using the platform this term</div>
+          </article>
+        </section>
+
+        <section class="dashboard-grid" style="margin-top: 18px;">
+          <article class="chart-card">
+            <div class="card-head">
+              <div>
+                <h2 class="card-title">Protocol Volume Distribution</h2>
+                <p class="subtitle">Dummy chart showing where tuition and treasury workflows are spending time and volume.</p>
+              </div>
+              <a class="card-link" href="#">Download Report <span class="material-symbols-outlined" style="font-size: 18px;">download</span></a>
+            </div>
+            <div class="chart-body">
+              <div class="chart-bars">
+                <div class="chart-bar" style="height: 82%;"><span class="bar-value">$1.2M</span><span class="bar-label">Uniswap</span></div>
+                <div class="chart-bar" style="height: 62%;"><span class="bar-value">$850K</span><span class="bar-label">Aave</span></div>
+                <div class="chart-bar" style="height: 42%;"><span class="bar-value">$420K</span><span class="bar-label">Compound</span></div>
+                <div class="chart-bar" style="height: 26%;"><span class="bar-value">$180K</span><span class="bar-label">Maker</span></div>
+              </div>
+            </div>
+          </article>
+
+          <aside class="stack-card">
+            <div class="card-head" style="margin-bottom: 0;">
+              <h2 class="card-title" style="font-size: 28px;">Active Channels</h2>
+            </div>
+
+            <div class="channel">
+              <div class="channel-main">
+                <div class="channel-icon"><span class="material-symbols-outlined">account_balance_wallet</span></div>
+                <div>
+                  <p class="channel-title">Tuition Pool Alpha</p>
+                  <p class="channel-subtitle">Mainnet • ETH</p>
+                </div>
+              </div>
+              <span class="status-chip success">Active</span>
+            </div>
+
+            <div class="channel">
+              <div class="channel-main">
+                <div class="channel-icon" style="background:#f1ecff;color:#7c3aed;"><span class="material-symbols-outlined">science</span></div>
+                <div>
+                  <p class="channel-title">Research Grants</p>
+                  <p class="channel-subtitle">Optimism • USDC</p>
+                </div>
+              </div>
+              <span class="status-chip success">Active</span>
+            </div>
+
+            <div class="channel">
+              <div class="channel-main">
+                <div class="channel-icon" style="background:#eef2f6;color:#667085;"><span class="material-symbols-outlined">restaurant</span></div>
+                <div>
+                  <p class="channel-title">Dining Services</p>
+                  <p class="channel-subtitle">Polygon • MATIC</p>
+                </div>
+              </div>
+              <span class="status-chip neutral">Syncing</span>
+            </div>
+
+            <a class="btn btn-secondary" href="#" style="width:100%; justify-content:center;">Manage Channels</a>
+          </aside>
+        </section>
+
+        <section class="table-wrap" style="margin-top: 18px;">
+          <div class="table-header">
+            <div>
+              <h2>Recent Transactions</h2>
+              <p class="subtitle" style="margin-top: 6px;">Hard-coded transaction data for the fee sweep, treasury split, and scholarship flows.</p>
+            </div>
+            <div class="table-tools">
+              <button class="icon-button" type="button" aria-label="Filter"><span class="material-symbols-outlined">filter_list</span></button>
+              <button class="icon-button" type="button" aria-label="More options"><span class="material-symbols-outlined">more_vert</span></button>
+            </div>
+          </div>
+
+          <div style="overflow:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>TxID</th>
+                  <th>Date</th>
+                  <th>Workflow</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th style="text-align:right;">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="txid">0x7f2...a9b4</td>
+                  <td>Today, 14:32</td>
+                  <td>Student Fee Sweep</td>
+                  <td>4.5 ETH</td>
+                  <td><span class="status-chip success">Completed</span></td>
+                  <td style="text-align:right;"><button class="icon-button" type="button" aria-label="View"><span class="material-symbols-outlined">visibility</span></button></td>
+                </tr>
+                <tr>
+                  <td class="txid">0x3a1...c8d2</td>
+                  <td>Today, 11:15</td>
+                  <td>University Distribution</td>
+                  <td>12,500 USDC</td>
+                  <td><span class="status-chip success">Completed</span></td>
+                  <td style="text-align:right;"><button class="icon-button" type="button" aria-label="View"><span class="material-symbols-outlined">visibility</span></button></td>
+                </tr>
+                <tr>
+                  <td class="txid">0x9e4...f1a7</td>
+                  <td>Yesterday</td>
+                  <td>Scholarship Routing</td>
+                  <td>2.1 wBTC</td>
+                  <td><span class="status-chip warning">Pending</span></td>
+                  <td style="text-align:right;"><button class="icon-button" type="button" aria-label="View"><span class="material-symbols-outlined">visibility</span></button></td>
+                </tr>
+                <tr>
+                  <td class="txid">0xa82...b722</td>
+                  <td>Yesterday</td>
+                  <td>Refund Routing</td>
+                  <td>18.4 ETH</td>
+                  <td><span class="status-chip neutral">Draft</span></td>
+                  <td style="text-align:right;"><button class="icon-button" type="button" aria-label="View"><span class="material-symbols-outlined">visibility</span></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="secondary-grid">
+          <article class="panel-card">
+            <div class="mini-kicker">Workflow families</div>
+            <h3>Three hard-coded university flows</h3>
+            <p>Student fee collection, university treasury distribution, and scholarship/refund routing all sit inside the same KeeperKit-backed operating model.</p>
+            <ul>
+              <li>Student prompts sweep assets from wallets, DeFi, and exchanges.</li>
+              <li>Staff workflows split incoming money into campus operating channels.</li>
+              <li>Exception workflows handle refunds, bursary payouts, and emergency support.</li>
+            </ul>
+          </article>
+
+          <article class="panel-card">
+            <div class="mini-kicker">Platform status</div>
+            <h3>Demo state is intentionally static</h3>
+            <p>Nothing on this page is connected to a live agent yet. The purpose is to show how the consumer-facing product could look once the KeeperHub integration is wired in.</p>
+            <div class="detail-list">
+              <div class="detail-item"><span>Workflow health</span><strong>99.9%</strong></div>
+              <div class="detail-item"><span>Connected campuses</span><strong>12</strong></div>
+              <div class="detail-item"><span>Shareable links</span><strong>24</strong></div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

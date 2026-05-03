@@ -1,7 +1,7 @@
 /**
  * Action tests — validate and handler tests for key actions.
  */
-import { describe, it, expect, vi } from 'vitest';
+/// <reference types="vitest" />
 import { createMockRuntime, createMockService } from './test-utils.js';
 import { workflowActions } from '../src/actions/workflow-actions.js';
 import { executionActions } from '../src/actions/execution-actions.js';

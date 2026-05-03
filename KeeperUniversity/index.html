@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Keeper University — Built on the KeeperKit SDK</title>
+  <meta name="description" content="Keeper University is a consumer-centric academic finance platform built in-house on the KeeperKit SDK. It hard-codes student fee collection, campus distribution, and scholarship workflows for now." />
+  <link rel="stylesheet" href="app.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- ═══════════════════ TOP NAV ═══════════════════ -->
+  <nav class="topnav" id="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="topnav-brand">
+        <div class="brand-mark">KU</div>
+        <span class="brand-name">Keeper University</span>
+      </a>
+      <div class="topnav-links">
+        <a href="index.html" class="active">Platform</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="chat.html">Workflow Builder</a>
+      </div>
+      <div class="topnav-actions">
+        <a href="chat.html" class="btn btn-primary btn-sm">Open Builder →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ SDK BANNER ═══════════════════ -->
+  <section class="sdk-banner" id="sdk-banner">
+    <div class="sdk-banner-inner">
+      <div class="sdk-badge-row">
+          <span class="sdk-badge">⚡ Built in-house on KeeperKit SDK v0.1.2</span>
+        <span class="sdk-badge sdk-badge-alt">Open Source</span>
+        <span class="sdk-badge sdk-badge-alt">TypeScript-first</span>
+      </div>
+      <p class="sdk-banner-text">
+        This entire platform is built in-house on <strong>KeeperKit SDK</strong> — the official TypeScript SDK for KeeperHub.
+        Every page is hard-coded for now, but the story, layout, and workflow logic all reflect the real SDK surface we ship to developers.
+        <a href="https://github.com/PhAnToMxSD/KeeperKit" target="_blank" class="sdk-link">View on GitHub →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-pill">Now accepting crypto fee payments</div>
+        <h1 class="hero-title">
+          Consumer-Centric Institutional Finance,<br/>
+          <span class="accent">Powered by KeeperKit</span>.
+        </h1>
+        <p class="hero-lead">
+          Keeper University bridges the gap between decentralized finance and institutional academia.
+          Students collect funds scattered across wallets, DeFi protocols, and exchanges into a single fee payment.
+          Universities distribute those funds across hostel, lecture halls, mess management, scholarship, and treasury channels using KeeperKit-powered workflows.
+        </p>
+        <div class="hero-actions">
+          <a href="chat.html" class="btn btn-primary">Open Workflow Builder →</a>
+          <a href="dashboard.html" class="btn btn-secondary">View Dashboard</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value">$4.2M</span>
+            <span class="hero-stat-label">Fees Processed</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">142</span>
+            <span class="hero-stat-label">Active Workflows</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">12</span>
+            <span class="hero-stat-label">Protocols Supported</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="terminal-panel">
+          <div class="terminal-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <div class="terminal-label">keeperkit — workflow</div>
+          </div>
+          <pre><code><span class="code-comment">// Student fee collection workflow</span>
+<span class="code-keyword">import</span> { KeeperKit } <span class="code-keyword">from</span> <span class="code-string">"keeperkit"</span>;
+
+<span class="code-keyword">const</span> client = <span class="code-keyword">new</span> <span class="code-fn">KeeperKit</span>({
+  apiKey: process.env.KEEPERHUB_API_KEY,
+});
+
+<span class="code-comment">// Collect from Aave, Uniswap, Coinbase</span>
+<span class="code-keyword">const</span> workflow = <span class="code-keyword">await</span> client.<span class="code-fn">createWorkflow</span>({
+  name: <span class="code-string">"Fee Collection: Fall 2026"</span>,
+  nodes: [triggerNode, swapNode, bridgeNode],
+  edges: paymentEdges,
+  enabled: <span class="code-keyword">true</span>,
+});
+
+<span class="code-comment">// Execute and get results</span>
+<span class="code-keyword">const</span> { executionId } = <span class="code-keyword">await</span> 
+  client.<span class="code-fn">executeWorkflow</span>(workflow.id);</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WHAT IS THIS PLATFORM ═══════════════════ -->
+  <section class="section" id="what-is-this">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="mini-kicker">What is Keeper University?</div>
+          <h2>The first consumer-facing academic finance platform built for students and staff</h2>
+        <p class="subtitle">
+          Academic institutions worldwide are beginning to accept cryptocurrency, but the operational path is still messy.
+          Students hold assets across wallets, protocols, and exchanges, while universities need to split incoming funds into multiple internal channels.
+          Keeper University presents that complexity as a consumer-friendly experience on top of the KeeperKit SDK.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="feature-card">
+          <div class="feature-icon">
+            <span class="material-symbols-outlined">account_balance_wallet</span>
+          </div>
+          <h3>Student Fee Collection</h3>
+          <p>
+            Students have their money scattered — ETH on Aave, USDC in a Phantom wallet, SOL staked on Marinade, 
+            BTC on Coinbase. Our AI agent builds a workflow that harvests funds from every source, swaps them into 
+            the university's required token, bridges across chains if needed, and deposits exactly the fee amount 
+            into the university endowment wallet. One prompt, one workflow, all automated.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">
+            <span class="material-symbols-outlined">account_tree</span>
+          </div>
+          <h3>University Fund Distribution</h3>
+          <p>
+            Once fees are collected, the university needs to distribute funds across departments: hostel management 
+            gets 30%, lecture hall maintenance gets 25%, mess/dining services get 20%, research grants get 15%, 
+            and an emergency reserve holds 10%. Our agent creates on-chain distribution workflows that execute 
+            transparently with full audit trails.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">
+            <span class="material-symbols-outlined">smart_toy</span>
+          </div>
+          <h3>Scholarship, Refund, and Emergency Routing</h3>
+          <p>
+            No coding required. Describe a scholarship payout, refund, or emergency stipend in natural language and the KeeperKit-backed agent maps the approval path, wallet fallback, and settlement currency for you.
+            The workflow keeps student services, finance staff, and campus leadership aligned through a single shareable graph.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="mini-kicker">How it works</div>
+        <h2>From scattered crypto to paid tuition — in four steps</h2>
+      </div>
+
+      <div class="flow-grid">
+        <div class="flow-item">
+          <div class="flow-step">1</div>
+          <div>
+            <h3>Describe your intent</h3>
+            <p>Tell the assistant exactly what needs to happen. A student can explain where the money lives, a bursar can explain how the campus wants to receive it, and the workflow builder can turn that into a usable plan.</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-step">2</div>
+          <div>
+            <h3>Agent builds a workflow graph</h3>
+            <p>Using the KeeperKit SDK, the agent constructs a directed graph of trigger nodes, swap nodes, condition nodes, and destination nodes. It validates the graph locally before submission so orphan nodes, dangling edges, and missing triggers are caught early.</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-step">3</div>
+          <div>
+            <h3>Execute on KeeperHub</h3>
+            <p>The workflow is submitted to KeeperHub via <code>client.executeWorkflow(id)</code>. An execution ID is returned immediately, and the platform can poll status with <code>getStatus()</code> and <code>getLogs()</code> until the run is complete.</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-step">4</div>
+          <div>
+            <h3>Funds arrive, receipts generated</h3>
+            <p>The university receives the exact fee amount in its preferred token. A shareable workflow link and a readable execution log are generated for both the student and the bursar's office.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SDK SHOWCASE ═══════════════════ -->
+  <section class="section" id="sdk-showcase">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="mini-kicker">Built on KeeperKit SDK</div>
+        <h2>The same SDK we ship to developers powers this platform</h2>
+        <p class="subtitle">
+          KeeperKit is the official TypeScript SDK for KeeperHub — a typed, ergonomic interface for workflows, 
+          executions, chains, integrations, marketplace listings, and direct execution. 9 core modules, 
+          2 client styles, and a retrying HTTP client with typed error models.
+        </p>
+      </div>
+
+      <div class="sdk-grid">
+        <div class="sdk-card">
+          <div class="mini-kicker">Workflows</div>
+          <h4>Full lifecycle management</h4>
+          <p>List, create, update, delete, enable, disable, execute, duplicate, download, and go-live. 
+          Graph builders with <code>createTriggerNode</code>, <code>createActionNode</code>, and <code>createConditionNode</code>.</p>
+        </div>
+        <div class="sdk-card">
+          <div class="mini-kicker">Executions</div>
+          <h4>Status polling & logs</h4>
+          <p>Poll execution status, retrieve structured logs, and use <code>waitForExecution</code> to 
+          block until terminal state. Automatic retry on 404 during indexing windows.</p>
+        </div>
+        <div class="sdk-card">
+          <div class="mini-kicker">Auth</div>
+          <h4>Pluggable providers</h4>
+          <p>ApiKeyAuth, OAuthBearerAuth, and SessionAuth providers. Keys start with <code>kh_</code> and are 
+          validated at initialization.</p>
+        </div>
+        <div class="sdk-card">
+          <div class="mini-kicker">Transport</div>
+          <h4>Retrying HTTP client</h4>
+          <p>Native fetch with auth headers, query serialization, and typed error mapping. 
+          GET retries by default, writes only with explicit <code>retryWrites</code>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SIGNUP / API KEY GUIDE ═══════════════════ -->
+  <section class="section section-alt" id="get-started">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="mini-kicker">Getting Started</div>
+        <h2>How to sign up for KeeperHub and generate your API key</h2>
+        <p class="subtitle">
+          To use the AI Workflow Builder, you need a KeeperHub account and an API key. 
+          The key is used to authenticate every SDK call against the KeeperHub protocol. 
+          Here's how to set everything up in under 5 minutes.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3>Create a KeeperHub Account</h3>
+          <p>Visit <a href="https://app.keeperhub.com" target="_blank" class="link">app.keeperhub.com</a> and sign up 
+          with your university email address. KeeperHub supports SSO for partnered institutions — check if your 
+          university is on the list for one-click enrollment.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3>Navigate to Developer Settings</h3>
+          <p>Once logged in, click your profile avatar in the top-right corner, then select 
+          <strong>"Developer Portal"</strong> from the dropdown. This opens the API management panel where you 
+          can create and manage your organization's API keys.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3>Generate an API Key</h3>
+          <p>Click <strong>"Create New Key"</strong>, give it a descriptive name like "University Fee Agent", 
+          and select the appropriate scopes (workflows:read, workflows:write, executions:read). Your key will 
+          be displayed once — copy it immediately. All KeeperHub API keys start with <code>kh_</code>.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <h3>Use the Key in Keeper University</h3>
+          <p>Paste your API key into the Keeper University settings panel, or set the 
+          <code>KEEPERHUB_API_KEY</code> environment variable. The platform validates the key on first use and 
+          connects your account to the AI workflow builder. You're ready to create your first workflow.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <span class="material-symbols-outlined">info</span>
+        </div>
+        <div>
+          <strong>Need help?</strong> 
+          <p>Check the <a href="https://docs.keeperhub.com" target="_blank" class="link">KeeperHub documentation</a> 
+          for detailed setup guides, or visit the 
+          <a href="https://github.com/PhAnToMxSD/KeeperKit" target="_blank" class="link">KeeperKit GitHub repository</a> 
+          to explore the SDK source code and contribute.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ THREE WORKFLOW TYPES ═══════════════════ -->
+  <section class="section" id="workflow-types">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="mini-kicker">Workflow Types</div>
+        <h2>Three core workflows for academic DeFi operations</h2>
+      </div>
+
+      <div class="workflow-grid">
+        <div class="workflow-card workflow-student">
+          <div class="workflow-badge">For Students</div>
+          <h3>Fee Collection Workflow</h3>
+          <p>Aggregate crypto from multiple wallets, protocols, and exchanges. The agent scans your connected 
+          sources — MetaMask, Phantom, Coinbase, Aave positions, Uniswap LP tokens — calculates the optimal 
+          swap path, and routes everything to the university's payment address.</p>
+          <div class="workflow-meta">
+            <span><span class="material-symbols-outlined">link</span> Multi-chain</span>
+            <span><span class="material-symbols-outlined">swap_horiz</span> Auto-swap</span>
+            <span><span class="material-symbols-outlined">verified</span> Auditable</span>
+          </div>
+        </div>
+
+        <div class="workflow-card workflow-university">
+          <div class="workflow-badge">For Staff</div>
+          <h3>Fund Distribution Workflow</h3>
+          <p>Automatically split incoming fee payments across departmental wallets. Configure percentage 
+          allocations for hostel management, lecture hall operations, dining services, research grants, and 
+          emergency reserves. All distributions are on-chain with real-time tracking.</p>
+          <div class="workflow-meta">
+            <span><span class="material-symbols-outlined">pie_chart</span> Split routing</span>
+            <span><span class="material-symbols-outlined">schedule</span> Scheduled</span>
+            <span><span class="material-symbols-outlined">receipt_long</span> Full audit</span>
+          </div>
+        </div>
+
+        <div class="workflow-card workflow-hybrid">
+          <div class="workflow-badge">For Admin</div>
+          <h3>Scholarship, Refund, and Emergency Routing</h3>
+          <p>Chain the student fee collection and university distribution workflows into a single end-to-end 
+            pipeline. When the bursar approves a refund or scholarship payout, the agent routes funds to the correct wallet, applies a failover path, and preserves a shareable audit trail.</p>
+          <div class="workflow-meta">
+              <span><span class="material-symbols-outlined">payments</span> Refunds</span>
+              <span><span class="material-symbols-outlined">verified</span> Approvals</span>
+              <span><span class="material-symbols-outlined">receipt_long</span> Audit trail</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CTA ═══════════════════ -->
+  <section class="cta-section" id="cta">
+    <div class="cta-inner">
+      <h2>Ready to automate your academic finances?</h2>
+      <p>Start building workflows with our AI agent. No coding required. Just describe what you need.</p>
+      <div class="cta-actions">
+        <a href="chat.html" class="btn btn-primary btn-lg">Open AI Workflow Builder →</a>
+        <a href="dashboard.html" class="btn btn-secondary btn-lg">Explore Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-mark">KU</div>
+        <div>
+          <strong>Keeper University</strong>
+          <p>Academic DeFi Payment Platform. Built on the KeeperKit SDK.</p>
+        </div>
+      </div>
+      <div class="footer-links-grid">
+        <div>
+          <strong>Platform</strong>
+          <a href="index.html">Home</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="chat.html">AI Agent</a>
+        </div>
+        <div>
+          <strong>Resources</strong>
+          <a href="https://github.com/PhAnToMxSD/KeeperKit" target="_blank">KeeperKit SDK</a>
+          <a href="https://docs.keeperhub.com" target="_blank">API Documentation</a>
+          <a href="https://app.keeperhub.com" target="_blank">KeeperHub App</a>
+        </div>
+        <div>
+          <strong>Legal</strong>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Keeper University. All rights reserved. Built for institutional excellence.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

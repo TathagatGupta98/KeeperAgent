@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Keeper University - Keeper Assistant</title>
+  <meta name="description" content="Keeper University's live Keeper Assistant page. Ask the embedded KeeperHub agent to list workflows, inspect executions, or draft consumer-centric finance automations." />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body class="builder-page">
+  <div class="builder-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-mark brand-mark-dark">KU</div>
+        <div>
+          <div class="sidebar-title">Keeper University</div>
+          <div class="sidebar-subtitle">Keeper Assistant</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Builder navigation">
+        <a class="sidebar-link" href="dashboard.html"><span class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+        <a class="sidebar-link active" href="chat.html"><span class="material-symbols-outlined">smart_toy</span><span>Workflow Builder</span></a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a class="sidebar-link" href="#"><span class="material-symbols-outlined">description</span><span>Documentation</span></a>
+        <a class="sidebar-link" href="#"><span class="material-symbols-outlined">help</span><span>Support</span></a>
+      </div>
+    </aside>
+
+    <div class="builder-main">
+      <header class="topbar">
+        <div class="topbar-brand">Keeper Assistant</div>
+        <div class="topbar-search">
+          <span class="material-symbols-outlined">search</span>
+          <input type="search" placeholder="Search workflows, students, or campuses..." aria-label="Search workflows, students, or campuses" />
+        </div>
+        <nav class="topbar-links" aria-label="Primary">
+          <a href="#">Payments</a>
+          <a href="#">Wallets</a>
+          <a href="#">SDK Logs</a>
+        </nav>
+        <div class="topbar-actions">
+          <button class="icon-button" type="button" aria-label="Notifications"><span class="material-symbols-outlined">notifications</span></button>
+          <button class="icon-button" type="button" aria-label="Sync"><span class="material-symbols-outlined">sync_alt</span></button>
+          <div class="avatar">KU</div>
+        </div>
+      </header>
+
+      <main class="builder-content">
+        <section class="builder-head">
+          <div>
+            <div class="eyebrow">Keeper Assistant</div>
+            <h1 class="builder-title">Workflow prompts, then live chat</h1>
+            <p class="builder-subtitle">The page starts with hard-coded KeeperHub examples again, and the chatbot sits below them so it feels like the agent authored the responses. The bottom chat box can still talk to the runtime when it is connected.</p>
+          </div>
+          <div class="builder-actions">
+            <a class="btn btn-secondary" href="dashboard.html">View Dashboard</a>
+            <a class="btn btn-primary" href="#messageInput">Start a Prompt</a>
+          </div>
+        </section>
+
+        <section class="assistant-hero side-card">
+          <div>
+            <div class="mini-kicker">Live agent</div>
+            <h2>Talk to KeeperAgent</h2>
+            <p class="assistant-hero-copy">Use natural language to list workflows, inspect execution history, or trigger onchain operations. The assistant now sits inside the consumer UI, so the conversation stays in focus.</p>
+          </div>
+          <div class="assistant-hero-actions">
+            <button class="share-link" type="button" data-copy-text="https://keeperhub.example/share/ku-fee-sweep-01">Copy share link</button>
+            <a class="btn btn-secondary" href="dashboard.html">View Dashboard</a>
+            <a class="btn btn-primary" href="#messageInput">Start a Prompt</a>
+          </div>
+        </section>
+
+        <section class="chat-layout">
+          <div class="chat-column">
+            <article class="turn" id="workflow-1">
+              <div class="turn-head">
+                <span class="turn-label">User Prompt</span>
+                <span class="turn-time">10:42 AM</span>
+              </div>
+              <div class="user-bubble">
+                I need a workflow for a student who has tuition money scattered across several places: a little ETH in MetaMask, stablecoins in Aave, a small amount of USDC on Coinbase, and some spare funds sitting in a wallet that has not been touched all semester. The university needs the final payment in USDC by Friday morning. I want the workflow to sweep only the exact amount required, protect against bad slippage, keep a small gas reserve behind, and produce a shareable link so the finance office can review the result before settlement.
+              </div>
+              <div class="turn-head" style="margin-top: 18px;">
+                <span class="turn-label">KeeperHub SDK Response</span>
+                <span class="turn-time">Generated workflow draft</span>
+              </div>
+              <div class="assistant-bubble">
+                <p>I would build that as a fee sweep workflow with a schedule trigger and an approval branch. The graph starts by checking the student’s balances across the supported sources, then it calculates the exact amount needed for tuition plus a small buffer for gas and conversion fees. From there, the workflow uses an action node for each source wallet or exchange, a condition node to stop any route that would exceed the slippage threshold, and a final settlement action that sends the resulting USDC to the university payment wallet.</p>
+                <p>Before execution, the SDK should validate the graph so missing nodes, dangling edges, or accidental overdraws are caught early. After that, the workflow can be executed and polled until completion using the standard KeeperHub lifecycle. The important part here is that the student keeps the rest of their funds untouched while the university gets exactly what it expects.</p>
+                <div class="workflow-summary">
+                  <h4>Generated nodes</h4>
+                  <ul>
+                    <li>Trigger: tuition deadline window at 08:00 Friday</li>
+                    <li>Action: inspect balances in MetaMask, Aave, Coinbase, and dormant wallet</li>
+                    <li>Condition: only move the amount required to cover tuition plus gas reserve</li>
+                    <li>Action: swap, bridge, and settle into the university USDC wallet</li>
+                  </ul>
+                  <div class="workflow-link-row">
+                    <a class="share-link" href="https://keeperhub.example/share/ku-fee-sweep-01" target="_blank" rel="noreferrer">View workflow</a>
+                    <button class="share-link" type="button" data-copy-text="https://keeperhub.example/share/ku-fee-sweep-01">Copy share link</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="turn" id="workflow-2">
+              <div class="turn-head">
+                <span class="turn-label">User Prompt</span>
+                <span class="turn-time">11:08 AM</span>
+              </div>
+              <div class="user-bubble">
+                Now build the university-side workflow. Once tuition hits the treasury, I want the system to split the incoming money into campus operating channels with clear percentages. Hostel maintenance should get the largest share, lecture hall upkeep should get a second slice, the dining hall should have enough to run the monthly schedule, and we need a reserve for labs, student services, and emergency repairs. The bursar wants a clean summary with labels, dates, and a share link that can be sent to the vice chancellor and the department heads.
+              </div>
+              <div class="turn-head" style="margin-top: 18px;">
+                <span class="turn-label">KeeperHub SDK Response</span>
+                <span class="turn-time">Generated workflow draft</span>
+              </div>
+              <div class="assistant-bubble">
+                <p>This one is a distribution workflow. I would create a trigger node for the treasury deposit event, then branch into a set of action nodes that split the incoming amount into the campus channels. Each channel can carry its own destination wallet, label, and share of the total. A condition node can enforce that the deposit clears before the split starts, and another condition can stop the workflow if the treasury balance is lower than the expected tuition collection window.</p>
+                <p>The resulting graph would give the finance team a very readable audit trail: which funds moved, where they went, and which channels are still syncing. Because the workflow is deterministic, the same structure can be reused each month with only the percentages and destination wallets changed. Once it is live, the standard execution helpers can track the run and expose node-level logs for the finance office.</p>
+                <div class="workflow-summary">
+                  <h4>Generated nodes</h4>
+                  <ul>
+                    <li>Trigger: tuition deposit confirmed in treasury</li>
+                    <li>Action: split 35% to hostel, 20% to lecture halls, 18% to dining, 12% to labs</li>
+                    <li>Action: allocate 10% to student services and 5% to emergency reserve</li>
+                    <li>Condition: hold distribution until settlement clears and the treasury threshold is met</li>
+                  </ul>
+                  <div class="workflow-link-row">
+                    <a class="share-link" href="https://keeperhub.example/share/ku-campus-split-02" target="_blank" rel="noreferrer">View workflow</a>
+                    <button class="share-link" type="button" data-copy-text="https://keeperhub.example/share/ku-campus-split-02">Copy share link</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="turn" id="workflow-3">
+              <div class="turn-head">
+                <span class="turn-label">User Prompt</span>
+                <span class="turn-time">12:31 PM</span>
+              </div>
+              <div class="user-bubble">
+                I also need a scholarship and refund workflow. When a student is overcharged, when a bursary committee approves a scholarship, or when an emergency stipend is required, I want the system to route the payout to the correct wallet automatically. If the main wallet fails, it should fall back to a secondary wallet without forcing staff to start over. I want the whole thing to be safe enough for the registrar, but simple enough that the student success office can understand it without reading code.
+              </div>
+              <div class="turn-head" style="margin-top: 18px;">
+                <span class="turn-label">KeeperHub SDK Response</span>
+                <span class="turn-time">Generated workflow draft</span>
+              </div>
+              <div class="assistant-bubble">
+                <p>I would model this as a conditional payout workflow. The first part is a trigger that listens for an approval event, refund request, or scholarship flag. The second part is a validation branch that checks the recipient wallet, the approved amount, and whether any settlement currency conversion is required. If the primary route cannot be used, the workflow should fall back to the secondary wallet automatically and keep the audit log intact.</p>
+                <p>This is a good place to use graph validation before execution because the staff experience depends on confidence: the registrar wants to see a safe path, the student success team wants to see the approval record, and the bursar wants a clean payout history. Once executed, the run can be inspected with the status and log helpers so everyone can review the outcome without asking engineering to dig through raw API calls.</p>
+                <div class="workflow-summary">
+                  <h4>Generated nodes</h4>
+                  <ul>
+                    <li>Trigger: scholarship approval, refund request, or emergency stipend flag</li>
+                    <li>Condition: verify recipient, amount, and currency conversion needs</li>
+                    <li>Action: route payout to primary wallet and fall back to secondary wallet if required</li>
+                    <li>Action: generate receipt and preserve approval trail for the registrar</li>
+                  </ul>
+                  <div class="workflow-link-row">
+                    <a class="share-link" href="https://keeperhub.example/share/ku-aid-routing-03" target="_blank" rel="noreferrer">View workflow</a>
+                    <button class="share-link" type="button" data-copy-text="https://keeperhub.example/share/ku-aid-routing-03">Copy share link</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="turn" id="workflow-4">
+              <div class="turn-head">
+                <span class="turn-label">User Prompt</span>
+                <span class="turn-time">01:27 PM</span>
+              </div>
+              <div class="user-bubble">
+                Finally, I want a treasury rebalancing workflow for the university itself. Some campuses keep volatile assets around until the payment window opens, but finance wants a safer plan that converts risky positions into stablecoins before the end of the month. The workflow should watch a price threshold, rebalance the buffer automatically, and stop if the market moves too far against us. The final output should make it obvious which assets were converted, when the conversion happened, and which campus treasury owns the new balance.
+              </div>
+              <div class="turn-head" style="margin-top: 18px;">
+                <span class="turn-label">KeeperHub SDK Response</span>
+                <span class="turn-time">Generated workflow draft</span>
+              </div>
+              <div class="assistant-bubble">
+                <p>This is a good fit for a rebalancing workflow with a price guard. The trigger can be a scheduled monthly check or a threshold alert when the treasury mix drifts too far from policy. From there, the graph can inspect the current holdings, decide whether the conversion path is safe, and move the assets into stable settlement currency if the conditions are met.</p>
+                <p>For the staff experience, I would keep the workflow readable: one trigger, one guardrail branch, one conversion branch, and one destination branch. That keeps the campus treasury easy to explain and easy to review. Once the workflow is published, a share link can go to finance leadership while the underlying execution remains fully auditable through the same KeeperHub execution helpers.</p>
+                <div class="workflow-summary">
+                  <h4>Generated nodes</h4>
+                  <ul>
+                    <li>Trigger: monthly treasury review or price threshold event</li>
+                    <li>Action: inspect risky positions and calculate the safe rebalance path</li>
+                    <li>Condition: stop conversion if slippage or price movement exceeds the policy guardrail</li>
+                    <li>Action: convert to stablecoins and record campus ownership metadata</li>
+                  </ul>
+                  <div class="workflow-link-row">
+                    <a class="share-link" href="https://keeperhub.example/share/ku-treasury-buffer-04" target="_blank" rel="noreferrer">View workflow</a>
+                    <button class="share-link" type="button" data-copy-text="https://keeperhub.example/share/ku-treasury-buffer-04">Copy share link</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <section class="assistant-panel">
+              <section class="banner" id="networkBanner" hidden></section>
+
+              <div class="chat-shell">
+                <section class="messages" id="messageList" aria-live="polite" aria-relevant="additions"></section>
+              </div>
+
+              <div class="composer-wrap">
+                <form class="composer" id="composerForm">
+                  <textarea id="messageInput" rows="1" placeholder="Ask KeeperAgent to manage workflows, executions, or onchain actions..." aria-label="Message to KeeperAgent"></textarea>
+                  <button class="btn btn-primary send-button" id="sendButton" type="submit">Send</button>
+                </form>
+              </div>
+            </section>
+          </div>
+
+          <aside class="builder-aside">
+            <section class="side-card">
+              <div class="mini-kicker">Current draft</div>
+              <h3>Live agent connected</h3>
+              <p>The workflow builder is now powered by the extracted KeeperHub chat runtime. Ask for a fee sweep, campus split, scholarship payout, treasury rebalance, workflow list, or recent execution summary and the assistant will respond in the same consumer-focused layout.</p>
+              <div class="detail-list">
+                <div class="detail-item"><span>Response mode</span><strong>Live</strong></div>
+                <div class="detail-item"><span>UI theme</span><strong>Consumer</strong></div>
+                <div class="detail-item"><span>Share links</span><strong>Enabled</strong></div>
+              </div>
+            </section>
+
+            <section class="side-card">
+              <div class="mini-kicker">Shareable links</div>
+              <div class="detail-list">
+                <div class="detail-item">
+                  <span>
+                    <strong>Fee sweep</strong>
+                    <div class="detail-note">keeperhub.example/share/ku-fee-sweep-01</div>
+                  </span>
+                  <button class="share-link" type="button" data-copy-text="https://keeperhub.example/share/ku-fee-sweep-01">Copy</button>
+                </div>
+                <div class="detail-item">
+                  <span>
+                    <strong>Campus split</strong>
+                    <div class="detail-note">keeperhub.example/share/ku-campus-split-02</div>
+                  </span>
+                  <button class="share-link" type="button" data-copy-text="https://keeperhub.example/share/ku-campus-split-02">Copy</button>
+                </div>
+                <div class="detail-item">
+                  <span>
+                    <strong>Aid routing</strong>
+                    <div class="detail-note">keeperhub.example/share/ku-aid-routing-03</div>
+                  </span>
+                  <button class="share-link" type="button" data-copy-text="https://keeperhub.example/share/ku-aid-routing-03">Copy</button>
+                </div>
+                <div class="detail-item">
+                  <span>
+                    <strong>Treasury buffer</strong>
+                    <div class="detail-note">keeperhub.example/share/ku-treasury-buffer-04</div>
+                  </span>
+                  <button class="share-link" type="button" data-copy-text="https://keeperhub.example/share/ku-treasury-buffer-04">Copy</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="side-card">
+              <div class="mini-kicker">SDK verbs used</div>
+              <p>The extracted agent follows the real KeeperKit surface: <code>listWorkflows</code>, <code>createTriggerNode</code>, <code>createActionNode</code>, <code>createConditionNode</code>, <code>validateWorkflowGraph</code>, <code>executeWorkflow</code>, <code>waitForExecution</code>, <code>getStatus</code>, and <code>getLogs</code>.</p>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script>window.KEEPER_AGENT_API_BASE = 'http://localhost:3000/api';</script>
+  <script src="app.js"></script>
+  <script src="assistant.js"></script>
+</body>
+</html>
